@@ -1,0 +1,21 @@
+.slicetype{
+	white-space: normal;
+}
+	.slicetype-letterset:before,
+	.slicetype-letterset:after{
+		content: '';
+		display:table;
+		clear: both;
+	}
+	.slicetype-word{
+		display: inline-block;
+		white-space: nowrap;
+	}
+		.slicetype-character{
+			position: relative;
+			display: inline-block;
+		}
+			.slicetype-character svg{
+				width: 100%;
+				height: 100%;
+			}
