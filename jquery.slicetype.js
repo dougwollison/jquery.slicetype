@@ -1,6 +1,8 @@
 /**
  * jQuery.sliceType
  * Draw and animate SVG characters (requires Raphael.js)
+ * 
+ * By Doug Wollison (http://dougw.me) at Premise: (http://premise.ca)
  */
 (function($){
 	/**
