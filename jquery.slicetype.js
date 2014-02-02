@@ -234,10 +234,9 @@
 				// Get the default spacing
 				var spacing = o.spacing;
 
-				// If there is a kern processor...
-				// and this isn't the last character...
+				// If this isn't the last character...
 				// and there's kerning data for this character...
-				if(o.kern && i+1 < chrs.length && o.font.kerning && o.font.kerning[chr]){
+				if(i+1 < chrs.length && o.font.kerning && o.font.kerning[chr]){
 					// Get the kerning data for this character
 					var kern = o.font.kerning[chr];
 					
@@ -246,8 +245,16 @@
 
 					// If there's kerning data for this character...
 					if(kern[next]){
-						// Append the value from the kern processor
-						spacing += o.kern(kern[next], o, chr);
+						// Get the kerning pair value
+						kerning = kern[next];
+					
+						// If a kern processor is availabe, use it
+						if(o.kern){
+							kerning = o.kern(kerning, o, chr);
+						}
+					
+						// Add the kerning value
+						spacing += kerning;
 					}
 				}
 
